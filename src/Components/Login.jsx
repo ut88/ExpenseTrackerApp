@@ -16,6 +16,7 @@ const Login=()=>{
     else{
       url="https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBDSHLdQOBnM-LGVn3VbOdMm6jjAx-FmtU";
     }
+    try{
      const response=await fetch(url,{
       method: "POST",
       body: JSON.stringify({
@@ -31,8 +32,12 @@ const Login=()=>{
     console.log(data); 
     if(data.idToken){
     console.log("Login Succesful")
-    localStorage.setItem("email", Email.replace("@", "").replace(".", ""));
+    localStorage.setItem("email", data.email.replace("@", "").replace(".", ""));
+    localStorage.setItem("Token",data.idToken);
     }
+  }catch(err){
+    alert(err);
+  }
   }
 
    return(<div className={classes.main}>
