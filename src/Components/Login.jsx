@@ -1,6 +1,6 @@
 import classes from "./Login.module.css";
 import { useState,useRef } from "react";
-const Login=()=>{ 
+const Login=(props)=>{ 
   const [confirm ,setConfirm]=useState(true);
   const [login,setLogin]=useState(false);
   const enterEmail=useRef();
@@ -29,10 +29,12 @@ const Login=()=>{
       },
     });
     const data = await response.json(); 
+    console.log(data);
     if(data.idToken){
     console.log("Login Succesful")
     localStorage.setItem("email", data.email.replace("@", "").replace(".", ""));
     localStorage.setItem("Token",data.idToken);
+    props.setLog(true)
     }
   }catch(err){
     alert(err);

@@ -13,7 +13,7 @@ function App() {
   })
   return (
     <>
-     {!log &&<Login />}
+     {!log &&<Login  setLog={setLog}/>}
      {log && <Welcome />}
     </>
   );
