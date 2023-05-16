@@ -28,8 +28,7 @@ const Login=()=>{
         "Content-Type": "application/json",
       },
     });
-    const data = await response.json();
-    console.log(data); 
+    const data = await response.json(); 
     if(data.idToken){
     console.log("Login Succesful")
     localStorage.setItem("email", data.email.replace("@", "").replace(".", ""));
