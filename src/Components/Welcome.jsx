@@ -1,4 +1,4 @@
-import { useState,useRef, useEffect } from "react"
+import { useState} from "react"
 import "./Welcome.css"
 const Welcome=()=>{
  const[compelete,setCompelete]=useState(false)
@@ -41,11 +41,24 @@ const Welcome=()=>{
        alert(err);
      }
     }
-  
+  const emailHandler=async()=>{
+   const res=await fetch("https://identitytoolkit.googleapis.com/v1/accounts:sendOobCode?key=AIzaSyBDSHLdQOBnM-LGVn3VbOdMm6jjAx-FmtU",{
+      method: "POST",
+      body: JSON.stringify({
+         requestType:"VERIFY_EMAIL",
+         idToken:localStorage.getItem("Token")}),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const data = await res.json();
+    console.log(data);
+  }
 
    return(<div className="Main">
     <div className="main">
-    <span><h1>Welcome to Expense Tracker</h1><h2>Your profile is incomplete <button onClick={updateHandler}>compelete Now</button></h2></span>
+    <span><h1>Welcome to Expense Tracker</h1><h2>Your profile is incomplete <button onClick={updateHandler}>compelete Now</button>||
+    <button onClick={emailHandler}>verify your email</button></h2></span>
     </div>
     {compelete && (
        <form className="form" onSubmit={profilehandler}>
