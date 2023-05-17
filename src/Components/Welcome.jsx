@@ -1,6 +1,6 @@
 import { useState} from "react"
 import "./Welcome.css"
-const Welcome=()=>{
+const Welcome=(props)=>{
  const[compelete,setCompelete]=useState(false)
  const[name,setName]=useState();
  const[url,setUrl]=useState(); 
@@ -54,11 +54,16 @@ const Welcome=()=>{
     const data = await res.json();
     console.log(data);
   }
+  const deleteHandler=()=>{
+    localStorage.removeItem("email")
+    localStorage.removeItem("Token")
+    props.setLog(false)
+  }
 
    return(<div className="Main">
     <div className="main">
-    <span><h1>Welcome to Expense Tracker</h1><h2>Your profile is incomplete <button onClick={updateHandler}>compelete Now</button>||
-    <button onClick={emailHandler}>verify your email</button></h2></span>
+    <span><h1>Welcome to Expense Tracker</h1><h2>Your profile is incomplete <button onClick={updateHandler}>compelete Now</button>.||
+    <button onClick={emailHandler}>verify your email</button>||<button onClick={deleteHandler} >User Logout</button></h2></span>
     </div>
     {compelete && (
        <form className="form" onSubmit={profilehandler}>
