@@ -40,6 +40,21 @@ const Login=(props)=>{
     alert(err);
   }
   }
+  const forgotHandler=async()=>{
+    const Email = enterEmail.current.value;
+    const res=await fetch("https://identitytoolkit.googleapis.com/v1/accounts:sendOobCode?key=AIzaSyBDSHLdQOBnM-LGVn3VbOdMm6jjAx-FmtU",{
+      method: "POST",
+      body: JSON.stringify({
+         requestType:"PASSWORD_RESET",
+         email:Email,
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+  })
+    const data = await res.json();
+    console.log(data);
+  }
 
    return(<div className={classes.main}>
    <form className={classes.form1} onSubmit={submitHandler}>
@@ -56,7 +71,9 @@ const Login=(props)=>{
      <h3>Confirm Password</h3>
      <input type="password" placeholder="Enter Your Confirm Password" required></input>
      </div>)}
+     {login &&  <p><a onClick={forgotHandler}>Forgot Password?</a></p>}
      <button type="submit" >{(login)?<h3>Sign In</h3>:<h3>SignUp</h3>}</button>
+     
   </form>
   <button className={classes.button} onClick={()=>{setConfirm(!confirm);setLogin(!login)}}>{(confirm)?<h2>Have an account?Login</h2>:<h2>New Account</h2>}</button>
   </div>)

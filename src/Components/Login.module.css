@@ -70,3 +70,10 @@
    background-color:rgb(51, 49, 49);
    box-shadow: 0 0 69px rgb(51, 49, 49);
 }
+.form1 p {
+text-align: center;
+font-weight: bolder;
+color: aquamarine;
+cursor: pointer;
+text-decoration: underline;
+}
