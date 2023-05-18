@@ -8,20 +8,32 @@
     margin: 0px;
     background-image: repeating-radial-gradient(violet,rgb(71, 7, 71));
 }
-
 .main h2{
     text-align: end;
     top: 20%;
     font-weight: bolder;
 }
-.main button{
-    background-color: rgb(206, 38, 108);
+.main span button{
+    font-weight: bolder;
+   background-color: rgb(226, 15, 15);
+   cursor: pointer;
+   width: 20%;
+   height: 1.5cm;
+   border-radius: 16px;
+}
+.main span button:hover{
+    background-color: rgb(113, 9, 9);
+}
+.main h2 button{
+    font-weight: bolder;
+    background-color: rgb(221, 13, 13);
     border-radius: 16px;
     color: black;
     height: 1cm;
     outline:1px rgb(128, 15, 94);
+    cursor: pointer;
 }
-.main button:hover{
+.main h2 button:hover{
     background-color:rgb(244, 12, 209);
 }
 
@@ -50,6 +62,7 @@
     margin-left: 2%;
     border-radius: 16px;
     background-color: brown;
+    cursor: pointer;
 }
 .form button:hover{
     background-color: rgb(231, 36, 36);

@@ -59,11 +59,19 @@ const Welcome=(props)=>{
     localStorage.removeItem("Token")
     props.setLog(false)
   }
+  const homehandler=()=>{
+    localStorage.setItem("home","true")
+    props.setHome(true)
+  }
 
    return(<div className="Main">
     <div className="main">
-    <span><h1>Welcome to Expense Tracker</h1><h2>Your profile is incomplete <button onClick={updateHandler}>compelete Now</button>.||
-    <button onClick={emailHandler}>verify your email</button>||<button onClick={deleteHandler} >User Logout</button></h2></span>
+    <span><h1>Welcome to Expense Tracker🎆</h1>
+    <button onClick={homehandler}>🏠Home</button></span>
+    <h2>Your profile If incomplete <button onClick={updateHandler}>compelete Now</button>.||
+    <button onClick={emailHandler}>verify your email</button>
+    ||<button onClick={deleteHandler} >User Logout</button>
+    </h2>
     </div>
     {compelete && (
        <form className="form" onSubmit={profilehandler}>

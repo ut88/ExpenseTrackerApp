@@ -29,9 +29,7 @@ const Login=(props)=>{
       },
     });
     const data = await response.json(); 
-    console.log(data);
     if(data.idToken){
-    console.log("Login Succesful")
     localStorage.setItem("email", data.email.replace("@", "").replace(".", ""));
     localStorage.setItem("Token",data.idToken);
     props.setLog(true)
@@ -75,7 +73,8 @@ const Login=(props)=>{
      <button type="submit" >{(login)?<h3>Sign In</h3>:<h3>SignUp</h3>}</button>
      
   </form>
-  <button className={classes.button} onClick={()=>{setConfirm(!confirm);setLogin(!login)}}>{(confirm)?<h2>Have an account?Login</h2>:<h2>New Account</h2>}</button>
+  <button className={classes.button}
+   onClick={()=>{setConfirm(!confirm);setLogin(!login)}}>{(confirm)?<h2>Have an account?Login</h2>:<h2>New Account</h2>}</button>
   </div>)
 }
 

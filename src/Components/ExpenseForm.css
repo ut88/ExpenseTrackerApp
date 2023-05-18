@@ -1,0 +1,38 @@
+.main2{
+    background-image: repeating-radial-gradient(white,rgb(53, 50, 50));
+    width:100vw;
+    height:100vh;
+}
+.formExpense{
+    width: 80%;
+    height:40%;
+    border: 6px solid lightseagreen;
+    box-sizing: border-box;
+    background-image: repeating-radial-gradient(white,purple);
+    margin-left: 10%;
+    margin-right: 10%;
+    display: flex;
+    flex-direction:row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.formExpense input{
+   width: 95%;
+   height:20%;
+   border-radius: 16px;
+}
+.formExpense select{
+    width: 95%;
+    height:23%;
+    border-radius: 16px;
+    font-weight: bolder;
+}
+.formExpense button{
+    height: 20%;
+    width: 45%;
+    border-radius: 16px;
+    font-weight:900;
+    background-image: radial-gradient(rgb(197, 183, 177),rgb(40, 1, 68));
+    cursor:cell;
+    outline-style: solid;
+}
