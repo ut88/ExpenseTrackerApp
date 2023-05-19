@@ -1,11 +1,20 @@
 import "./ExpenseForm.css"
-import { useRef } from "react";
+import { useRef,useState } from "react";
 import ExpenseList from "./ExpenseList";
-const ExpenseForm=()=>{
+const ExpenseForm=(props)=>{
   let ExpenseArray=[];
   const detail=useRef();
   const price=useRef();
   const expenseType=useRef(); 
+  const [FormInput,setFormInput]=useState();
+  if(FormInput){
+    detail.current.value=FormInput.ExpenseDetails;
+    price.current.value=FormInput.Amount;
+    expenseType.current.value=FormInput.ExpenseType;
+  }
+  const editForm=(data)=>{
+     setFormInput(data);
+  }
    const ExpenseHandler=async(e)=>{
     e.preventDefault();
     const obj={
@@ -24,9 +33,10 @@ const ExpenseForm=()=>{
           console.log(result)
    }
 
+
     return(<div className="main2">
       <form className="formExpense" onSubmit={ExpenseHandler}>
-        <div><h1>Expense Detail</h1><input type="text" ref={detail} required></input></div>
+        <div><h1>Expense Detail</h1><input type="text" ref={detail}  required></input></div>
         <div><h1>Expense Amount</h1><input type="number" ref={price}  required></input></div>
         <div>  <h1>Expense Type</h1>
         <select ref={expenseType}>
@@ -40,7 +50,7 @@ const ExpenseForm=()=>{
         </div>
         <button type="submit">Add Expense</button>
       </form>
-      <ExpenseList />
+      <ExpenseList edit={editForm} />
     </div>)
 }
 
