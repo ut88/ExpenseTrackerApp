@@ -1,12 +1,12 @@
 .main2{
     background-image: repeating-radial-gradient(white,rgb(53, 50, 50));
     width:100vw;
-    height:100vh;
+    min-height:100vh;
 }
 .formExpense{
     width: 80%;
-    height:40%;
-    border: 6px solid lightseagreen;
+    height:40vh;
+    border: 6px solid rgb(74, 4, 77);
     box-sizing: border-box;
     background-image: repeating-radial-gradient(white,purple);
     margin-left: 10%;

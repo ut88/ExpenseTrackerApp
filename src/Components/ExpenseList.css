@@ -1,13 +1,18 @@
 .back{
     margin-top:2%;
     width: 80%;
-    height:55%;
-    border: 6px solid lightseagreen;
+    min-height:55vh;
+    border: 6px solid rgb(83, 4, 83);
     box-sizing: border-box;
     background-image: repeating-radial-gradient(white,purple);
     margin-left: 10%;
     margin-right: 10%;
 
+}
+.back h1{
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: underline;
 }
 .back h1{
     text-align: center;

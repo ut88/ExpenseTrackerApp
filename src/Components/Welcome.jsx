@@ -16,6 +16,8 @@ const Welcome=(props)=>{
     });
     const data = await res.json();
     const {users}=data;
+    console.log(users)
+    console.timeLog(data)
     setName(users[0].displayName);setUrl(users[0].photoUrl)
     setCompelete(!compelete)
  }
@@ -54,23 +56,14 @@ const Welcome=(props)=>{
     const data = await res.json();
     console.log(data);
   }
-  const deleteHandler=()=>{
-    localStorage.removeItem("email")
-    localStorage.removeItem("Token")
-    props.setLog(false)
-  }
-  const homehandler=()=>{
-    localStorage.setItem("home","true")
-    props.setHome(true)
-  }
+
+
 
    return(<div className="Main">
     <div className="main">
-    <span><h1>Welcome to Expense Tracker🎆</h1>
-    <button onClick={homehandler}>🏠Home</button></span>
+    <h1>Welcome to Expense Tracker🎆</h1>
     <h2>Your profile If incomplete <button onClick={updateHandler}>compelete Now</button>.||
     <button onClick={emailHandler}>verify your email</button>
-    ||<button onClick={deleteHandler} >User Logout</button>
     </h2>
     </div>
     {compelete && (

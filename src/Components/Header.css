@@ -1,0 +1,43 @@
+.header{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-between;
+    background-color: #3c0080;
+    font-style: italic;
+    text-decoration: antiquewhite;
+    border-bottom: 4px solid lightskyblue;
+    padding: 0 0%;
+  }
+
+  .link h3{
+    color: aliceblue;
+   text-decoration: underline;
+  }
+  .link h3:hover{
+    color: aqua;
+  }
+  
+  .link1 h3{
+    color: aliceblue;
+    text-decoration: underline;
+  }
+
+  .link1 h3:hover{
+    color: aqua;
+  }
+
+  .button3{
+    background-color: red;
+    height: 50%;
+    border: 2px solid rgb(220, 210, 210);
+    border-radius: 16px;
+    
+  }
+  .button3:hover{
+    background-color: rgb(183, 21, 21);
+  }
+ 
+ 

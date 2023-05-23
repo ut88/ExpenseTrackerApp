@@ -1,6 +1,9 @@
 import classes from "./Login.module.css";
 import { useState,useRef } from "react";
+import { useDispatch } from "react-redux";
+import { authActions } from "./store/auth";
 const Login=(props)=>{ 
+  const dispatch =useDispatch()
   const [confirm ,setConfirm]=useState(true);
   const [login,setLogin]=useState(false);
   const enterEmail=useRef();
@@ -30,9 +33,9 @@ const Login=(props)=>{
     });
     const data = await response.json(); 
     if(data.idToken){
+    dispatch(authActions.convert())
     localStorage.setItem("email", data.email.replace("@", "").replace(".", ""));
     localStorage.setItem("Token",data.idToken);
-    props.setLog(true)
     }
   }catch(err){
     alert(err);
