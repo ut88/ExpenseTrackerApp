@@ -1,15 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
-const intialvalue={check:false}
+const intialvalue={check:false,amount:0}
 
 const premiumSlice=createSlice({
     name:'Premium',
     initialState:intialvalue,
     reducers:{
-        yes(state){
-          state.check=true
-        },
-        no(state){
-          state.check=false
+        getAmount(state,action){
+          state.amount=action.payload
+          if(state.amount>=10000)
+          state.check=true;
+          else
+          state.check=false;
         }
     }
 })

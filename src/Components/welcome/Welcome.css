@@ -1,0 +1,61 @@
+.Main {
+  width: 99vw;
+  height: 100vh;
+  background-color: grey;
+}
+.main {
+  padding: 1px;
+  margin: 0px;
+  width: 99vw;
+  height: 20vh;
+  background-image: repeating-radial-gradient(violet, rgb(71, 7, 71));
+}
+.main h2 {
+  text-align: right;
+  top: 20%;
+  font-weight: bolder;
+}
+.main h2 button {
+  float: inherit;
+  font-weight: bolder;
+  background-color: rgb(221, 13, 13);
+  border-radius: 16px;
+  color: black;
+  height: 1cm;
+  outline: 1px rgb(128, 15, 94);
+  cursor: pointer;
+}
+.main h2 button:hover {
+  background-color: rgb(244, 12, 209);
+}
+
+.form {
+  margin-top: 10%;
+  width: 60%;
+  height: 20%;
+  margin-left: 38%;
+  margin-right: 3%;
+  background-image: repeating-radial-gradient(violet, rgb(71, 7, 71));
+  border: 5px solid lightblue;
+  display: grid;
+  grid-template-columns: auto auto;
+}
+.form div {
+  padding-left: 2%;
+}
+.form input {
+  width: 60%;
+  height: 25%;
+  border-radius: 16px;
+}
+.form button {
+  width: 60%;
+  height: 75%;
+  margin-left: 2%;
+  border-radius: 16px;
+  background-color: brown;
+  cursor: pointer;
+}
+.form button:hover {
+  background-color: rgb(231, 36, 36);
+}
